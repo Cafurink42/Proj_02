@@ -1,68 +1,14 @@
 import 'package:flutter/material.dart';
 
-void main() {
-  runApp(const MyApp());
-}
+main() =>
+    (PerguntaApp()); //criação de instância para o runApp passando o StatelessWidget
 
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
-  @override
+@override //método dizendo para sobreescrever o método build
+class PerguntaApp extends StatelessWidget {
   Widget build(BuildContext context) {
+    //método build que recebe um BuildContext
     return MaterialApp(
-      title: 'Contador',
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(
-            seedColor: const Color.fromARGB(66, 42, 23, 216)),
-        useMaterial3: true,
-      ),
-      home: const MyHomePage(title: 'Decremente o valor'),
-    );
-  }
-}
-
-class MyHomePage extends StatefulWidget {
-  const MyHomePage({super.key, required this.title});
-  final String title;
-
-  @override
-  State<MyHomePage> createState() => _MyHomePageState();
-}
-
-class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
-
-  void _incrementCounter() {
-    setState(() {
-      _counter--;
-    });
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Theme.of(context).colorScheme.surfaceContainerHighest,
-        title: Text(widget.title),
-      ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            const Text(
-              'Contador de decrementação',
-            ),
-            Text(
-              '$_counter',
-              style: Theme.of(context).textTheme.headlineMedium,
-            ),
-          ],
-        ),
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: 'Increment',
-        child: const Icon(Icons.numbers_outlined),
-      ),
+      home: Text("Olá Flutter!"),
     );
   }
 }
